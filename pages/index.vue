@@ -373,7 +373,7 @@ import {
 } from 'lucide-vue-next'
 import { useWindowScroll } from '@vueuse/core'
 
-import mahfuzPhoto from '~/assets/images/Mahfuz.jpg'
+import mahfuzPhoto from '~/assets/images/Mahfuz_HD.jpeg'
 
 const { $gsap } = useNuxtApp()
 const colorMode = useColorMode()
