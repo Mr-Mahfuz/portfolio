@@ -9,15 +9,17 @@
 
     <!-- Animated border frame -->
     <div class="photo-frame-outer relative group">
-      <!-- Spinning glowing border (The moving beam of light) -->
-      <div class="absolute -inset-[4px] rounded-[2rem] overflow-hidden opacity-90 group-hover:opacity-100 transition-opacity duration-500">
-        <!-- Comet tail -->
-        <div class="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0_240deg,var(--accent)_360deg)] animate-spin-slow"></div>
-        <!-- Bright glowing tip -->
-        <div class="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0_350deg,#ffffff_360deg)] animate-spin-slow blur-[1px]"></div>
+      <!-- Smooth ambient glowing border -->
+      <div class="absolute -inset-[3px] rounded-[2rem] overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity duration-700 z-0">
+        <!-- Container that spins smoothly -->
+        <div class="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 animate-[spin_8s_linear_infinite]">
+          <!-- Colored glowing orbs that rotate along the edge -->
+          <div class="absolute top-0 left-1/2 w-full h-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00f0ff] via-[#b44aff] to-[#ff2d7c] blur-[15px] opacity-70"></div>
+          <div class="absolute bottom-0 right-1/2 w-full h-1/2 translate-x-1/2 bg-gradient-to-r from-[#ff2d7c] via-[#b8956a] to-[#00f0ff] blur-[15px] opacity-70"></div>
+        </div>
       </div>
       
-      <!-- Center mask to hide the middle of the conic gradient -->
+      <!-- Inner frame to mask the center and only reveal the glowing edge -->
       <div class="absolute -inset-[1px] rounded-[1.85rem]" :style="{ background: 'var(--bg-primary)' }"></div>
 
       <!-- Photo container -->
