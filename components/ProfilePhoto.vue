@@ -9,13 +9,15 @@
 
     <!-- Animated border frame -->
     <div class="photo-frame-outer relative group">
-      <!-- Smooth ambient glowing border -->
+      <!-- Dual crossing comet borders -->
       <div class="absolute -inset-[3px] rounded-[2rem] overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity duration-700 z-0">
-        <!-- Container that spins smoothly -->
-        <div class="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 animate-[spin_8s_linear_infinite]">
-          <!-- Colored glowing orbs that rotate along the edge -->
-          <div class="absolute top-0 left-1/2 w-full h-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00f0ff] via-[#b44aff] to-[#ff2d7c] blur-[15px] opacity-70"></div>
-          <div class="absolute bottom-0 right-1/2 w-full h-1/2 translate-x-1/2 bg-gradient-to-r from-[#ff2d7c] via-[#b8956a] to-[#00f0ff] blur-[15px] opacity-70"></div>
+        <!-- Clockwise moving comet -->
+        <div class="absolute top-1/2 left-1/2 w-[250%] aspect-square -translate-x-1/2 -translate-y-1/2 animate-[spin_4s_linear_infinite]">
+          <div class="absolute inset-0 bg-[conic-gradient(from_0deg,transparent_0_240deg,#00f0ff_340deg,transparent_360deg)] blur-[4px]"></div>
+        </div>
+        <!-- Counter-clockwise moving comet -->
+        <div class="absolute top-1/2 left-1/2 w-[250%] aspect-square -translate-x-1/2 -translate-y-1/2 animate-[spin_4s_linear_infinite_reverse]">
+          <div class="absolute inset-0 bg-[conic-gradient(from_0deg,transparent_0_240deg,#ff2d7c_340deg,transparent_360deg)] blur-[4px]"></div>
         </div>
       </div>
       
