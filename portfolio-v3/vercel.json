@@ -1,0 +1,10 @@
+{
+  "buildCommand": "nuxt generate",
+  "outputDirectory": ".output/public",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
