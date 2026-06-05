@@ -1,9 +1,18 @@
 <template>
-  <div>
+  <div class="relative">
+    <!-- Particle Background -->
+    <ClientOnly>
+      <ParticleCanvas />
+    </ClientOnly>
+
+    <!-- Scroll Progress -->
+    <ScrollProgress />
+
+    <!-- Page Content -->
     <NuxtPage />
   </div>
 </template>
 
 <script setup>
-// No extra logic needed here as it's handled in pages
+// Main app layout with particle background and scroll progress
 </script>

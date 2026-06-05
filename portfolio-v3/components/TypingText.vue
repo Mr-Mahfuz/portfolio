@@ -1,6 +1,7 @@
 <template>
-  <span class="inline-block">
-    {{ currentText }}<span class="animate-pulse text-neon-cyan">|</span>
+  <span class="inline-block font-mono">
+    <span class="typing-text">{{ currentText }}</span>
+    <span class="typing-cursor" :style="{ color: 'var(--accent)' }">|</span>
   </span>
 </template>
 
@@ -30,7 +31,7 @@ const isDeleting = ref(false)
 
 const type = () => {
   const fullWord = props.words[wordIndex.value]
-  
+
   if (isDeleting.value) {
     currentText.value = fullWord.substring(0, currentText.value.length - 1)
   } else {
@@ -55,3 +56,27 @@ onMounted(() => {
   type()
 })
 </script>
+
+<style scoped>
+.typing-text {
+  color: var(--accent);
+}
+
+.dark .typing-text {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.4),
+               0 0 30px rgba(0, 240, 255, 0.15);
+}
+
+.typing-cursor {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.dark .typing-cursor {
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+</style>
