@@ -9,20 +9,29 @@
 
     <!-- Animated border frame -->
     <div class="photo-frame-outer relative group">
-      <!-- Gradient border -->
-      <div class="absolute -inset-[3px] rounded-[2rem] bg-gradient-animated opacity-70 group-hover:opacity-100 transition-opacity duration-500 blur-[1px]"></div>
-      <div class="absolute -inset-[3px] rounded-[2rem] bg-gradient-animated opacity-40"></div>
+      <!-- Spinning glowing border (The moving beam of light) -->
+      <div class="absolute -inset-[4px] rounded-[2rem] overflow-hidden opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+        <!-- Comet tail -->
+        <div class="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0_240deg,var(--accent)_360deg)] animate-spin-slow"></div>
+        <!-- Bright glowing tip -->
+        <div class="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0_350deg,#ffffff_360deg)] animate-spin-slow blur-[1px]"></div>
+      </div>
+      
+      <!-- Center mask to hide the middle of the conic gradient -->
+      <div class="absolute -inset-[1px] rounded-[1.85rem]" :style="{ background: 'var(--bg-primary)' }"></div>
 
       <!-- Photo container -->
-      <div class="relative bg-abyss-950 dark:bg-abyss-950 rounded-[1.85rem] overflow-hidden z-10">
-        <img
-          :src="src"
-          :alt="alt"
-          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          loading="eager"
-        />
-        <!-- Overlay gradient -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="relative bg-abyss-950 dark:bg-abyss-950 rounded-[1.85rem] overflow-hidden z-10 p-[2px]">
+        <div class="w-full h-full rounded-[1.75rem] overflow-hidden relative">
+          <img
+            :src="src"
+            :alt="alt"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="eager"
+          />
+          <!-- Overlay gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </div>
       </div>
     </div>
 
