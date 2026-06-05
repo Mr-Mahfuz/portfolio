@@ -46,8 +46,8 @@ export default <Partial<Config>>{
         }
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        display: ['Outfit', 'sans-serif'],
+        sans: ['Inter', '"Noto Sans Bengali"', 'ui-sans-serif', 'system-ui'],
+        display: ['Outfit', '"Noto Sans Bengali"', 'sans-serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       borderRadius: {

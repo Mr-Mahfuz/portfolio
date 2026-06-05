@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
+    '@nuxt/image',
   ],
   colorMode: {
     classSuffix: '',
@@ -22,6 +23,11 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'no_prefix',
   },
+  nitro: {
+    routeRules: {
+      '/**': { prerender: true }
+    }
+  },
   css: ['~/assets/css/main.css'],
   app: {
     head: {
@@ -35,7 +41,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/jpeg', href: '/Mahfuz.jpg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap' },
         { name: 'theme-color', content: '#050510' }
       ]
     }

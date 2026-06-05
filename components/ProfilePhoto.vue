@@ -27,10 +27,13 @@
       <!-- Photo container -->
       <div class="relative bg-abyss-950 dark:bg-abyss-950 rounded-[1.85rem] overflow-hidden z-10 p-[2px]">
         <div class="w-full h-full rounded-[1.75rem] overflow-hidden relative">
-          <img
+          <NuxtImg
             :src="src"
             :alt="alt"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            format="webp"
+            quality="80"
+            sizes="sm:280px md:340px lg:380px"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             loading="eager"
           />
           <!-- Overlay gradient -->

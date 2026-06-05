@@ -20,16 +20,16 @@
 
     <div class="section-container relative z-10">
       <NuxtLink to="/" class="inline-flex items-center gap-2 mb-8 text-sm font-bold transition-all duration-300 hover:-translate-x-1" :style="{ color: 'var(--text-muted)' }">
-        <LucideArrowLeft :size="18" /> Back to Home
+        <LucideArrowLeft :size="18" /> {{ $t('backToHome') }}
       </NuxtLink>
 
       <SectionHeading
-        preText="All"
-        highlightText="Projects"
+        :preText="$t('all')"
+        :highlightText="$t('projectsTitle2')"
         class="mb-16"
       >
         <template #subtitle>
-          A comprehensive list of enterprise platforms, IoT solutions, and mobile-responsive applications I've built.
+          {{ $t('allProjectsSubtitle') }}
         </template>
       </SectionHeading>
 
@@ -52,6 +52,7 @@ import { ArrowLeft as LucideArrowLeft } from 'lucide-vue-next'
 const { $gsap } = useNuxtApp()
 const colorMode = useColorMode()
 const isDark = computed(() => colorMode.value === 'dark')
+const { t } = useI18n()
 
 onMounted(() => {
   if (process.client) {
@@ -76,57 +77,57 @@ onMounted(() => {
   }
 })
 
-const allProjects = [
+const allProjects = computed(() => [
   {
     title: 'GK International Training Institute',
-    description: 'Developed an automated certificate engine and student management pipeline, processing thousands of enrollments efficiently with 1-click bulk issuance.',
+    description: t('allProj1Desc'),
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop',
     link: 'https://gkinstitutebd.com',
     tags: ['Nuxt 3', 'Supabase', 'Pinia']
   },
   {
     title: 'Fleet Management System',
-    description: 'A comprehensive fleet management solution with operational dashboards and voucher management workflows for transportation operations.',
+    description: t('allProj2Desc'),
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
     link: 'https://fleet-ujjal.riggcorp.com',
     tags: ['Vue.js', 'Nuxt 3', 'Supabase']
   },
   {
     title: 'Enterprise POS',
-    description: 'Modern Point of Sale system designed for high-traffic retail environments with offline sync capabilities and strict role-based access control.',
+    description: t('allProj3Desc'),
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
     link: 'https://pos.riggcorp.com',
     tags: ['Inventory', 'FinTech', 'Nuxt']
   },
   {
     title: 'Precision Engine (Repair SaaS)',
-    description: 'A modern multi-tenant SaaS platform for repair shops. Built with a high-performance backend using Hono, Drizzle ORM, BullMQ, and PostgreSQL on Bun.',
+    description: t('allProj4Desc'),
     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop',
     tags: ['Hono', 'Drizzle ORM', 'Bun']
   },
   {
     title: 'Student Management System',
-    description: 'Scalable multi-tenant portal streamlining administrative tracking for coaching centers and Madrasahs. Includes attendance and result management.',
+    description: t('allProj5Desc'),
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop',
     tags: ['Nuxt 3', 'Vue.js', 'Supabase']
   },
   {
     title: 'SmartPark: IoT Urban Parking',
-    description: 'IoT-based urban parking solution. Configured firmware for ESP8266 microcontrollers and integrated sensor data transmission via Firebase.',
+    description: t('allProj6Desc'),
     image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?q=80&w=2027&auto=format&fit=crop',
     tags: ['NodeMCU', 'C++', 'Firebase']
   },
   {
     title: 'REB Auction Portal',
-    description: 'Engineered a mobile-first, responsive user interface for an enterprise auction platform with complex inventory workflows.',
+    description: t('allProj7Desc'),
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
     tags: ['Frontend', 'UI/UX', 'Enterprise']
   },
   {
     title: 'Norway Event App',
-    description: 'Mobile-responsive client application bridging real-time event data with elegant UI components for seamless attendee experiences.',
+    description: t('allProj8Desc'),
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop',
     tags: ['Mobile-First', 'Vue.js', 'Events']
   }
-]
+])
 </script>

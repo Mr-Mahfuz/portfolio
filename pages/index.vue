@@ -1,7 +1,5 @@
 <template>
   <div class="min-h-screen noise-bg" :style="{ background: 'var(--bg-primary)' }">
-    <Navbar />
-
     <main>
       <!-- ========== HERO SECTION ========== -->
       <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden min-h-[90vh] flex items-center">
@@ -43,7 +41,7 @@
                     :style="{ background: isDark ? '#39ff14' : 'var(--accent)' }"
                   ></span>
                 </span>
-                Available for new projects
+                {{ $t('availableForWork') }}
               </div>
 
               <!-- Main heading -->
@@ -57,7 +55,7 @@
               <p class="text-lg md:text-xl mb-10 leading-relaxed animate-slide-up [animation-delay:100ms]"
                 :style="{ color: 'var(--text-muted)' }"
               >
-                {{ $t('subtitle') }} I specialize in
+                {{ $t('subtitle') }} {{ $t('specializeIn') }}
                 <TypingText
                   :words="['Vue.js', 'Nuxt 3', 'TypeScript', 'Modern UI/UX']"
                   class="font-bold"
@@ -120,7 +118,7 @@
 
         <!-- Scroll indicator -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 animate-float">
-          <span class="text-[10px] uppercase tracking-[0.3em] font-medium" :style="{ color: 'var(--text-muted)' }">Scroll</span>
+          <span class="text-[10px] uppercase tracking-[0.3em] font-medium" :style="{ color: 'var(--text-muted)' }">{{ $t('scroll') }}</span>
           <div class="w-[1px] h-8" :style="{ background: 'var(--gradient-accent)' }"></div>
         </div>
       </section>
@@ -134,11 +132,11 @@
         <div class="section-container pt-8">
           <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <SectionHeading
-              preText="Selected"
-              highlightText="Work"
+              :preText="$t('selected')"
+              :highlightText="$t('work')"
             >
               <template #subtitle>
-                A collection of projects ranging from enterprise systems to personalized client experiences.
+                {{ $t('projectSubtitle') }}
               </template>
             </SectionHeading>
 
@@ -147,7 +145,7 @@
               class="group flex items-center gap-2 text-sm font-bold transition-all duration-300 shrink-0"
               :style="{ color: 'var(--text-muted)' }"
             >
-              Explore All
+              {{ $t('exploreAll') }}
               <LucideArrowUpRight
                 :size="18"
                 class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
@@ -173,20 +171,20 @@
             <!-- Left: About text -->
             <div class="reveal">
               <SectionHeading
-                highlightText="About Me"
-                postText="& My Work"
+                :highlightText="$t('aboutTitle1')"
+                :postText="$t('aboutTitle2')"
               >
                 <template #subtitle>
-                  Building the future of the web, one pixel at a time.
+                  {{ $t('aboutSubtitle') }}
                 </template>
               </SectionHeading>
 
               <div class="space-y-5 text-lg leading-relaxed mt-8" :style="{ color: 'var(--text-muted)' }">
                 <p class="reveal">
-                  I'm a Software Engineer dedicated to crafting high-performance web applications that provide exceptional user experiences. My approach combines technical excellence with a keen eye for design.
+                  {{ $t('aboutP1') }}
                 </p>
                 <p class="reveal">
-                  With a background in building complex enterprise systems and real-time management portals, I bring a wealth of experience to every project I undertake.
+                  {{ $t('aboutP2') }}
                 </p>
               </div>
 
@@ -214,15 +212,15 @@
               <!-- Experience -->
               <div class="pt-8 mt-8 reveal" :style="{ borderTop: '1px solid var(--border)' }">
                 <h3 class="text-sm font-bold uppercase tracking-[0.2em] mb-6" :style="{ color: 'var(--text-muted)' }">
-                  Experience
+                  {{ $t('experience') }}
                 </h3>
                 <div class="space-y-6">
                   <div class="relative pl-6" :style="{ borderLeft: '2px solid var(--border)' }">
                     <div class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full" :style="{ background: 'var(--accent)' }"></div>
                     <h4 class="font-bold text-lg" :style="{ color: 'var(--text-primary)' }">Rigg Technologies</h4>
-                    <p class="text-sm mb-2" :style="{ color: 'var(--accent)' }">Junior Software Engineer (Jan 2026 - Present)</p>
+                    <p class="text-sm mb-2" :style="{ color: 'var(--accent)' }">{{ $t('exp1Role') }} {{ $t('exp1Date') }}</p>
                     <p class="text-sm leading-relaxed" :style="{ color: 'var(--text-muted)' }">
-                      Developing and maintaining enterprise web applications using Nuxt 3, Vue.js, and Supabase. Building multi-tenant POS platforms, fleet management portals, and event apps.
+                      {{ $t('exp1Desc') }}
                     </p>
                   </div>
                 </div>
@@ -283,16 +281,16 @@
               <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold mb-6 reveal"
                 :style="{ color: 'var(--text-primary)' }"
               >
-                Start a <span class="gradient-text">project</span>.
+                {{ $t('startProject') }} <span class="gradient-text">{{ $t('project') }}</span>.
               </h2>
               <p class="text-lg md:text-xl max-w-xl mx-auto mb-10 reveal" :style="{ color: 'var(--text-muted)' }">
-                Have a vision in mind? Let's turn it into reality with modern technologies and professional design.
+                {{ $t('contactSubtitle') }}
               </p>
 
               <div class="reveal">
                 <MagneticButton variant="primary" size="md">
                   <a href="mailto:mahfuz.raj.bd@gmail.com" class="inline-flex items-center gap-3">
-                    Get in Touch <LucideMail :size="20" />
+                    {{ $t('getInTouch') }} <LucideMail :size="20" />
                   </a>
                 </MagneticButton>
               </div>
@@ -300,86 +298,29 @@
           </div>
         </div>
       </section>
-
-      <!-- ========== FOOTER ========== -->
-      <footer class="py-12 relative" :style="{ borderTop: '1px solid var(--border)' }">
-        <!-- Gradient top line -->
-        <div class="absolute top-0 left-0 right-0 h-[1px]" :style="{ background: 'var(--gradient-accent)', opacity: '0.3' }"></div>
-
-        <div class="section-container">
-          <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-              <div class="text-xl font-display font-bold mb-1" :style="{ color: 'var(--text-primary)' }">
-                Mahfuz Ahmad
-              </div>
-              <p class="text-sm italic" :style="{ color: 'var(--text-muted)' }">
-                Crafting experiences, not just code.
-              </p>
-            </div>
-
-            <div class="flex items-center gap-5">
-              <a
-                v-for="social in socials"
-                :key="social.label"
-                :href="social.link"
-                target="_blank"
-                class="p-2 rounded-lg transition-all duration-300"
-                :style="{ color: 'var(--text-muted)' }"
-                :title="social.label"
-              >
-                <component :is="social.icon" :size="20" class="hover:scale-110 transition-transform duration-300" />
-              </a>
-            </div>
-
-            <div class="text-sm" :style="{ color: 'var(--text-muted)' }">
-              &copy; {{ new Date().getFullYear() }} All Rights Reserved.
-            </div>
-          </div>
-        </div>
-
-        <!-- Scroll to top button -->
-        <button
-          v-show="showScrollTop"
-          @click="scrollToTop"
-          class="fixed bottom-8 right-8 p-3 rounded-xl z-40 transition-all duration-300 hover:-translate-y-1"
-          :style="{
-            background: 'var(--glass-bg)',
-            border: '1px solid var(--border)',
-            color: 'var(--accent)',
-            backdropFilter: 'blur(12px)',
-          }"
-        >
-          <LucideArrowUp :size="20" />
-        </button>
-      </footer>
     </main>
   </div>
 </template>
 
 <script setup>
 import {
-  Github as LucideGithub,
-  Linkedin as LucideLinkedin,
-  Mail as LucideMail,
   ArrowRight as LucideArrowRight,
   Download as LucideDownload,
   ArrowUpRight as LucideArrowUpRight,
-  ArrowUp as LucideArrowUp,
   Code2 as LucideCode,
   Layers as LucideLayers,
   Cpu as LucideCpu,
   Monitor as LucideMonitor,
-  Database as LucideDatabase
+  Database as LucideDatabase,
+  Mail as LucideMail
 } from 'lucide-vue-next'
-import { useWindowScroll } from '@vueuse/core'
 
-import mahfuzPhoto from '~/assets/images/Mahfuz_HD.jpeg'
+const mahfuzPhoto = '/images/Mahfuz_HD.jpeg'
 
 const { $gsap } = useNuxtApp()
 const colorMode = useColorMode()
 const isDark = computed(() => colorMode.value === 'dark')
-const { y } = useWindowScroll()
-const showScrollTop = computed(() => y.value > 600)
+const { t } = useI18n()
 
 onMounted(() => {
   // Reveal animations on scroll
@@ -408,45 +349,35 @@ const scrollTo = (id) => {
   }
 }
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
-const socials = [
-  { label: 'GitHub', link: 'https://github.com/Mr-Mahfuz', icon: LucideGithub },
-  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/mahfuz-ahmad-a87328327/', icon: LucideLinkedin },
-  { label: 'Email', link: 'mailto:mahfuz.raj.bd@gmail.com', icon: LucideMail },
-]
-
-const projects = [
+const projects = computed(() => [
   {
     title: 'GK International Training Institute',
-    description: 'Developed an automated certificate engine and student management pipeline, processing thousands of enrollments efficiently.',
+    description: t('proj1Desc'),
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop',
     link: 'https://gkinstitutebd.com',
     tags: ['Nuxt 3', 'Automation', 'EdTech']
   },
   {
     title: 'Fleet Logistics Suite',
-    description: 'A comprehensive fleet management solution with real-time tracking, maintenance scheduling, and fuel monitoring.',
+    description: t('proj2Desc'),
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
     link: 'https://fleet-ujjal.riggcorp.com',
     tags: ['Supabase', 'Logistics', 'Vue']
   },
   {
     title: 'Enterprise POS',
-    description: 'Modern Point of Sale system designed for high-traffic retail environments with offline sync capabilities.',
+    description: t('proj3Desc'),
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
     tags: ['Inventory', 'FinTech', 'Nuxt']
   }
-]
+])
 
-const skills = [
-  { name: 'Frontend', category: 'Vue.js, Nuxt 3, Tailwind', icon: LucideMonitor },
-  { name: 'Backend', category: 'Node/Hono, PostgreSQL, Supabase', icon: LucideDatabase },
-  { name: 'Languages', category: 'JS/TS, Python, SQL, Java', icon: LucideCode },
-  { name: 'Tools', category: 'Git, VS Code, Vercel', icon: LucideLayers },
-]
+const skills = computed(() => [
+  { name: t('frontend'), category: t('catFrontend'), icon: LucideMonitor },
+  { name: t('backend'), category: t('catBackend'), icon: LucideDatabase },
+  { name: t('languages'), category: t('catLanguages'), icon: LucideCode },
+  { name: t('tools'), category: t('catTools'), icon: LucideLayers },
+])
 
-const hobbies = ['Hafiz-e-Quran', 'PC Gaming', 'Boxing', 'Running', 'Swimming']
+const hobbies = computed(() => [t('hobby1'), t('hobby2'), t('hobby3'), t('hobby4'), t('hobby5')])
 </script>

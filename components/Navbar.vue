@@ -130,10 +130,13 @@
 <script setup>
 import { useWindowScroll } from '@vueuse/core'
 import { Sun as LucideSun, Moon as LucideMoon, Menu as LucideMenu, X as LucideX } from 'lucide-vue-next'
+import { useRouter, useRoute } from 'vue-router'
 
 const { y } = useWindowScroll()
 const { locale, setLocale } = useI18n()
 const mobileMenuOpen = ref(false)
+const router = useRouter()
+const route = useRoute()
 
 const scrolled = computed(() => y.value > 20)
 
@@ -146,17 +149,35 @@ const toggleTheme = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 
-const scrollToSection = (hash) => {
-  const el = document.querySelector(hash)
-  if (el) {
-    window.scrollTo({
-      top: el.offsetTop - 100,
-      behavior: 'smooth'
-    })
+const scrollToSection = async (to) => {
+  if (to === '/') {
+    if (route.path !== '/') {
+      await router.push('/')
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    return
+  }
+
+  if (to.startsWith('#')) {
+    if (route.path !== '/') {
+      await router.push('/' + to)
+    } else {
+      const el = document.querySelector(to)
+      if (el) {
+        window.scrollTo({
+          top: el.offsetTop - 100,
+          behavior: 'smooth'
+        })
+      }
+    }
+  } else {
+    router.push(to)
   }
 }
 
 const navItems = [
+  { label: 'home', to: '/' },
   { label: 'projects', to: '#projects' },
   { label: 'about', to: '#about' },
   { label: 'contact', to: '#contact' },

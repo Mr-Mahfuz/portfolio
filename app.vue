@@ -1,15 +1,21 @@
 <template>
-  <div class="relative">
+  <div class="relative min-h-screen flex flex-col">
     <!-- Particle Background -->
     <ClientOnly>
-      <ParticleCanvas />
+      <LazyParticleCanvas />
     </ClientOnly>
 
     <!-- Scroll Progress -->
     <ScrollProgress />
 
+    <Navbar />
+
     <!-- Page Content -->
-    <NuxtPage />
+    <div class="flex-grow">
+      <NuxtPage />
+    </div>
+
+    <Footer />
   </div>
 </template>
 
