@@ -1,6 +1,24 @@
 <template>
-  <div class="min-h-screen noise-bg pt-32 pb-24" :style="{ background: 'var(--bg-primary)' }">
-    <div class="section-container">
+  <div class="relative min-h-screen noise-bg pt-32 pb-24 overflow-hidden" :style="{ background: 'var(--bg-primary)' }">
+    <!-- Background effects -->
+    <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+      <!-- Gradient orbs -->
+      <div class="absolute top-0 left-0 w-[600px] h-[600px] rounded-full -translate-x-1/3 -translate-y-1/3 blur-[120px] opacity-30"
+        :class="isDark ? 'bg-neon-cyan/20' : 'bg-warm-gold/20'"
+      ></div>
+      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full translate-x-1/3 translate-y-1/3 blur-[100px] opacity-20"
+        :class="isDark ? 'bg-neon-purple/20' : 'bg-warm-caramel/15'"
+      ></div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 opacity-[0.03]"
+        :style="{
+          backgroundImage: `radial-gradient(${isDark ? '#e8e8f0' : '#2c2419'} 1px, transparent 1px)`,
+          backgroundSize: '32px 32px'
+        }"
+      ></div>
+    </div>
+
+    <div class="section-container relative z-10">
       <NuxtLink to="/" class="inline-flex items-center gap-2 mb-8 text-sm font-bold transition-all duration-300 hover:-translate-x-1" :style="{ color: 'var(--text-muted)' }">
         <LucideArrowLeft :size="18" /> Back to Home
       </NuxtLink>
@@ -32,6 +50,8 @@
 import { ArrowLeft as LucideArrowLeft } from 'lucide-vue-next'
 
 const { $gsap } = useNuxtApp()
+const colorMode = useColorMode()
+const isDark = computed(() => colorMode.value === 'dark')
 
 onMounted(() => {
   if (process.client) {
