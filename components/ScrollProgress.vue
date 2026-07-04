@@ -9,7 +9,7 @@ const { y } = useWindowScroll()
 const { height: windowHeight } = useWindowSize()
 
 const progress = computed(() => {
-  if (!process.client) return 0
+  if (!import.meta.client) return 0
   const docHeight = document.documentElement.scrollHeight - windowHeight.value
   if (docHeight <= 0) return 0
   return Math.min((y.value / docHeight) * 100, 100)

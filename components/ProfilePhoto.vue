@@ -1,56 +1,63 @@
 <template>
-  <div class="profile-photo-wrapper relative" ref="wrapperRef">
-    <!-- Orbiting decorations -->
-    <div class="orbit-container absolute inset-0 pointer-events-none">
-      <div class="orbit-dot animate-orbit" style="--orbit-radius: 140px; --orbit-delay: 0s;"></div>
-      <div class="orbit-dot animate-orbit-reverse" style="--orbit-radius: 130px; --orbit-delay: -4s; width: 6px; height: 6px; opacity: 0.5;"></div>
-      <div class="orbit-ring animate-orbit" style="--orbit-radius: 150px; --orbit-delay: -8s;"></div>
-    </div>
-
-    <!-- Animated border frame -->
-    <div class="photo-frame-outer relative group">
-      <!-- Dual crossing comet borders -->
-      <div class="absolute -inset-[3px] rounded-[2rem] overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity duration-700 z-0">
-        <!-- Clockwise moving comet -->
-        <div class="absolute top-1/2 left-1/2 w-[250%] aspect-square -translate-x-1/2 -translate-y-1/2 animate-[spin_4s_linear_infinite]">
-          <div class="absolute inset-0 bg-[conic-gradient(from_0deg,transparent_0_240deg,#00f0ff_340deg,transparent_360deg)] blur-[4px]"></div>
-        </div>
-        <!-- Counter-clockwise moving comet -->
-        <div class="absolute top-1/2 left-1/2 w-[250%] aspect-square -translate-x-1/2 -translate-y-1/2 animate-[spin_4s_linear_infinite_reverse]">
-          <div class="absolute inset-0 bg-[conic-gradient(from_0deg,transparent_0_240deg,#ff2d7c_340deg,transparent_360deg)] blur-[4px]"></div>
-        </div>
+  <div class="profile-photo relative" ref="wrapperRef">
+    <!-- Animated gradient border -->
+    <div class="relative rounded-2xl overflow-hidden group">
+      <!-- Rotating gradient border -->
+      <div class="absolute -inset-[2px] rounded-2xl z-0 overflow-hidden">
+        <div
+          class="absolute inset-0 rotating-border"
+          :style="{
+            background: 'conic-gradient(from 0deg, var(--accent), transparent 30%, transparent 70%, var(--accent))',
+            opacity: '0.7',
+          }"
+        ></div>
       </div>
-      
-      <!-- Inner frame to mask the center and only reveal the glowing edge -->
-      <div class="absolute -inset-[1px] rounded-[1.85rem]" :style="{ background: 'var(--bg-primary)' }"></div>
+
+      <!-- Static subtle border fallback -->
+      <div
+        class="absolute -inset-[1.5px] rounded-2xl z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-700"
+        :style="{ background: 'var(--gradient-accent)' }"
+      ></div>
 
       <!-- Photo container -->
-      <div class="relative bg-abyss-950 dark:bg-abyss-950 rounded-[1.85rem] overflow-hidden z-10 p-[2px]">
-        <div class="w-full h-full rounded-[1.75rem] overflow-hidden relative">
-          <NuxtImg
-            :src="src"
-            :alt="alt"
-            format="webp"
-            quality="80"
-            sizes="sm:280px md:340px lg:380px"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="eager"
-          />
-          <!-- Overlay gradient -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        </div>
+      <div class="relative rounded-2xl overflow-hidden z-10 bg-[var(--bg-card)]">
+        <NuxtImg
+          :src="src"
+          :alt="alt"
+          format="webp"
+          quality="85"
+          sizes="sm:280px md:340px lg:380px"
+          class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          loading="eager"
+        />
+        <!-- Gradient overlay on hover -->
+        <div
+          class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style="background: linear-gradient(to top, rgba(0,0,0,0.15), transparent 60%)"
+        ></div>
       </div>
     </div>
 
-    <!-- Background glow -->
-    <div class="absolute -inset-10 -z-10 rounded-full opacity-30 blur-3xl transition-opacity duration-700"
-      :class="isDark ? 'bg-neon-cyan/20' : 'bg-warm-gold/20'"
+    <!-- Glow effect behind photo -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full -z-10 blur-[60px] opacity-20 transition-opacity duration-700 group-hover:opacity-30"
+      :style="{ background: 'var(--accent)' }"
+    ></div>
+
+    <!-- Decorative accent square -->
+    <div
+      class="absolute -bottom-3 -right-3 w-20 h-20 rounded-xl -z-10 opacity-15"
+      :style="{ background: 'var(--accent)' }"
+    ></div>
+    <div
+      class="absolute -top-3 -left-3 w-12 h-12 rounded-lg -z-10 opacity-10"
+      :style="{ border: '2px solid var(--accent)' }"
     ></div>
   </div>
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   src: {
     type: String,
     required: true
@@ -61,18 +68,15 @@ const props = defineProps({
   }
 })
 
-const colorMode = useColorMode()
-const isDark = computed(() => colorMode.value === 'dark')
 const wrapperRef = ref(null)
-
 const { $gsap } = useNuxtApp()
 
 onMounted(() => {
   if (wrapperRef.value && $gsap) {
     $gsap.from(wrapperRef.value, {
-      scale: 0.8,
+      scale: 0.9,
       opacity: 0,
-      duration: 1.2,
+      duration: 1,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: wrapperRef.value,
@@ -82,73 +86,3 @@ onMounted(() => {
   }
 })
 </script>
-
-<style scoped>
-.bg-gradient-animated {
-  background: var(--gradient-accent-vivid);
-  background-size: 300% 300%;
-  animation: photo-gradient-spin 4s ease-in-out infinite;
-}
-
-@keyframes photo-gradient-spin {
-  0%, 100% { background-position: 0% 50%; }
-  25% { background-position: 100% 0%; }
-  50% { background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-}
-
-.orbit-container {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-}
-
-.orbit-dot {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
-  animation: orbit-spin 12s linear infinite;
-  animation-delay: var(--orbit-delay, 0s);
-}
-
-.animate-orbit-reverse .orbit-dot,
-.orbit-dot.animate-orbit-reverse {
-  animation-direction: reverse;
-}
-
-.orbit-ring {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
-  background: transparent;
-  opacity: 0.3;
-  animation: orbit-spin 16s linear infinite;
-  animation-delay: var(--orbit-delay, 0s);
-}
-
-@keyframes orbit-spin {
-  from {
-    transform: rotate(0deg) translateX(var(--orbit-radius, 120px)) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(var(--orbit-radius, 120px)) rotate(-360deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .orbit-container {
-    display: none;
-  }
-}
-</style>

@@ -1,69 +1,61 @@
 <template>
-  <div ref="headingRef" class="section-heading mb-4">
-    <div v-if="badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-xs font-bold tracking-wider uppercase badge-style animate-fade-in">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full opacity-75" :style="{ background: 'var(--accent)' }"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2" :style="{ background: 'var(--accent)' }"></span>
-      </span>
-      {{ badge }}
+  <div ref="headingRef" class="mb-4">
+    <!-- Section number label with decorative line -->
+    <div
+      v-if="number"
+      class="flex items-center gap-3 mb-4"
+    >
+      <span class="section-label">{{ number }} — {{ label }}</span>
+      <span
+        class="flex-grow max-w-[60px] h-px"
+        :style="{ background: 'var(--accent-border)' }"
+      ></span>
+    </div>
+    <div
+      v-else-if="label"
+      class="section-label mb-4"
+    >
+      {{ label }}
     </div>
 
-    <h2 class="text-3xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-[1.1]">
-      <span v-if="preText" class="text-[var(--text-primary)]">{{ preText }} </span>
-      <span class="gradient-text">{{ highlightText }}</span>
-      <span v-if="postText" class="text-[var(--text-primary)]"> {{ postText }}</span>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight leading-[1.1]">
+      <span :style="{ color: 'var(--text-primary)' }">{{ text }}</span>
+      <span v-if="accentText" class="accent-text"> {{ accentText }}</span>
     </h2>
 
-    <div v-if="$slots.subtitle" class="mt-4 text-lg md:text-xl max-w-2xl" style="color: var(--text-muted)">
+    <div
+      v-if="$slots.subtitle"
+      class="mt-4 text-base md:text-lg max-w-2xl leading-relaxed"
+      :style="{ color: 'var(--text-muted)' }"
+    >
       <slot name="subtitle" />
     </div>
-
-    <!-- Animated underline -->
-    <div class="mt-6 h-[2px] w-0 underline-bar" :class="{ 'animate-draw-line': isVisible }" :style="{ background: 'var(--gradient-accent-vivid)' }"></div>
   </div>
 </template>
 
 <script setup>
 defineProps({
-  badge: { type: String, default: '' },
-  preText: { type: String, default: '' },
-  highlightText: { type: String, required: true },
-  postText: { type: String, default: '' },
+  number: { type: String, default: '' },
+  label: { type: String, default: '' },
+  text: { type: String, required: true },
+  accentText: { type: String, default: '' },
 })
 
 const headingRef = ref(null)
-const isVisible = ref(false)
 const { $gsap } = useNuxtApp()
 
 onMounted(() => {
   if (headingRef.value && $gsap) {
     $gsap.from(headingRef.value, {
       opacity: 0,
-      y: 40,
-      duration: 1,
+      y: 30,
+      duration: 0.8,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: headingRef.value,
-        start: 'top 85%',
-        onEnter: () => { isVisible.value = true }
+        start: 'top 88%',
       }
     })
   }
 })
 </script>
-
-<style scoped>
-.badge-style {
-  background: var(--glass-bg);
-  border: 1px solid var(--border);
-  color: var(--accent);
-}
-
-.underline-bar {
-  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.underline-bar.animate-draw-line {
-  width: 80px;
-}
-</style>

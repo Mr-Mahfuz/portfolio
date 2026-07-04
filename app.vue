@@ -1,10 +1,5 @@
 <template>
   <div class="relative min-h-screen flex flex-col">
-    <!-- Particle Background -->
-    <ClientOnly>
-      <LazyParticleCanvas />
-    </ClientOnly>
-
     <!-- Scroll Progress -->
     <ScrollProgress />
 
@@ -20,5 +15,5 @@
 </template>
 
 <script setup>
-// Main app layout with particle background and scroll progress
+// Main app layout — clean, no particle backgrounds
 </script>

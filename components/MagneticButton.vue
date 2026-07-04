@@ -2,11 +2,10 @@
   <button
     ref="btnRef"
     :class="[
-      'magnetic-btn inline-flex items-center justify-center gap-2.5 font-semibold active:scale-95 disabled:opacity-50 disabled:pointer-events-none',
+      'magnetic-btn inline-flex items-center justify-center gap-2.5 font-semibold active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none cursor-pointer',
       variant === 'primary' ? 'btn-primary' : 'btn-secondary',
-      size === 'sm' ? 'px-5 py-2.5 text-sm rounded-xl' : 'px-8 py-4 text-base rounded-2xl'
+      size === 'sm' ? 'px-5 py-2.5 text-sm rounded-lg' : 'px-7 py-3 text-sm rounded-xl'
     ]"
-    @mouseenter="onEnter"
     @mousemove="onMove"
     @mouseleave="onLeave"
     @click="onRipple"
@@ -34,11 +33,11 @@
 defineProps({
   variant: {
     type: String,
-    default: 'primary' // 'primary' | 'secondary'
+    default: 'primary'
   },
   size: {
     type: String,
-    default: 'md' // 'sm' | 'md'
+    default: 'md'
   }
 })
 
@@ -46,18 +45,12 @@ const btnRef = ref(null)
 const ripples = ref([])
 let rippleId = 0
 
-const onEnter = () => {
-  // Could add magnetic pull here if desired
-}
-
 const onMove = (e) => {
   if (!btnRef.value) return
   const rect = btnRef.value.getBoundingClientRect()
   const x = e.clientX - rect.left - rect.width / 2
   const y = e.clientY - rect.top - rect.height / 2
-
-  // Subtle magnetic follow (toned down for usability)
-  btnRef.value.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`
+  btnRef.value.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`
 }
 
 const onLeave = () => {
@@ -84,7 +77,7 @@ const onRipple = (e) => {
 <style scoped>
 .magnetic-btn {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              background-position 0.3s ease,
+              background 0.3s ease,
               box-shadow 0.3s ease,
               border-color 0.3s ease;
 }
