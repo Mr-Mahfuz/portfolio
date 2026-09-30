@@ -416,6 +416,12 @@ const experiences = computed(() => [
 
 const featuredProjects = computed(() => [
   {
+    title: t('projThesisTitle'),
+    description: t('projThesisDesc'),
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
+    tags: ['TinyML', 'Python', 'C++', 'ESP32'],
+  },
+  {
     title: t('proj1Title'),
     description: t('proj1Desc'),
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',

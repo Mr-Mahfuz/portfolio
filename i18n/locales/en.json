@@ -5,7 +5,6 @@
   "projects": "Projects",
   "contact": "Contact",
   "current": "Current",
-
   "availableForWork": "Available for opportunities",
   "heroGreeting": "Hi, I'm",
   "heroName": "Mahfuz Ahmad",
@@ -15,11 +14,9 @@
   "downloadResume": "Download CV",
   "viewLive": "View Live",
   "scroll": "Scroll to explore",
-
   "expLabel": "EXPERIENCE",
   "expTitle": "Where I've",
   "expTitleAccent": "worked",
-
   "exp1Role": "Junior Software Engineer",
   "exp1Company": "Rigg Technologies",
   "exp1Period": "Jan 2026 — Present",
@@ -29,7 +26,6 @@
   "exp1Point3": "Engineer mobile-first, responsive UIs across client applications including the REB Auction portal and a Norway Event App.",
   "exp1Point4": "Implement complex frontend business logic, inventory workflows, and strict role-based access control (RBAC).",
   "exp1Point5": "Integrate frontend applications with backend APIs built using Java Spring Boot and Node.js.",
-
   "exp2Role": "Software Engineer Intern",
   "exp2Company": "Rigg Technologies",
   "exp2Period": "Oct 2025 — Dec 2025",
@@ -37,13 +33,11 @@
   "exp2Point1": "Collaborated with senior engineers to debug applications and optimize performance.",
   "exp2Point2": "Documented technical workflows and contributed to codebase improvements.",
   "exp2Point3": "Gained hands-on experience with enterprise-grade Vue.js and Supabase development.",
-
   "projLabel": "PROJECTS",
   "projTitle": "Selected",
   "projTitleAccent": "work",
   "projSubtitle": "A collection of projects from AI-driven platforms to enterprise systems and IoT solutions.",
   "exploreAll": "View All Projects",
-
   "proj1Title": "HomeSchool: AI-Driven Learning Platform",
   "proj1Desc": "Architected a hyper-personalized e-learning platform utilizing Agentic AI workflows to dynamically generate quizzes and targeted learning materials. Engineered a \"Tri-Storage\" backend leveraging PostgreSQL, pgvector for semantic search, and Neo4j for an interactive curriculum knowledge graph. Implemented strict LLM output validation using Zod schemas and built automated onboarding workflows with n8n.",
   "proj2Title": "TechFlix: Corporate ERP & CMS Portal",
@@ -52,11 +46,9 @@
   "proj3Desc": "Developed a fully mobile-responsive, multi-tenant ERP platform for an international training institute with secure data isolation. Built frictionless guest-to-student booking workflow, automated certificate generation with 1-click bulk issuance, and attendance tracking with 10-point grading.",
   "proj4Title": "SmartPark: IoT Urban Parking Solution",
   "proj4Desc": "Configured firmware for ESP8266 microcontrollers and integrated real-time sensor data transmission via Firebase. Co-authored a conference paper detailing the system architecture.",
-
   "skillsLabel": "SKILLS",
   "skillsTitle": "Technologies",
   "skillsTitleAccent": "I use",
-
   "aboutLabel": "ABOUT",
   "aboutTitle": "A bit about",
   "aboutTitleAccent": "me",
@@ -68,7 +60,6 @@
   "hobby3": "Boxing",
   "hobby4": "Running",
   "hobby5": "Swimming",
-
   "eduLabel": "EDUCATION",
   "eduTitle": "Academic",
   "eduTitleAccent": "background",
@@ -84,7 +75,6 @@
   "eduCourse5": "Operating Systems",
   "eduCourse6": "Computer Networks",
   "eduCourse7": "Theory of Computation",
-
   "eduDegree2": "HSC — Science",
   "eduInst2": "Madinatul Ulum Kamil Madrasa",
   "eduPeriod2": "2022",
@@ -93,14 +83,12 @@
   "eduInst3": "Madinatul Ulum Kamil Madrasa",
   "eduPeriod3": "2020",
   "eduResult3": "5.00 / 5.00",
-
   "contactLabel": "CONTACT",
   "contactTitle": "Let's build something",
   "contactTitleAccent": "great together",
   "contactSubtitle": "Have a vision in mind? Let's turn it into reality with modern technologies and professional design.",
   "getInTouch": "Get in Touch",
   "orEmailMe": "or email me at",
-
   "footerTagline": "Software Engineer crafting scalable web applications and AI-driven platforms.",
   "allRightsReserved": "All Rights Reserved.",
   "builtWith": "Built with Nuxt 3 & Vue.js",
@@ -108,13 +96,11 @@
   "connect": "Connect",
   "enterprise": "Enterprise System",
   "publication": "Publication",
-
   "all": "All",
   "projectsTitle": "All",
   "projectsTitleAccent": "Projects",
   "allProjectsSubtitle": "A comprehensive list of enterprise platforms, IoT solutions, and AI-driven applications I've built.",
   "backToHome": "Back to Home",
-
   "allProj1Title": "HomeSchool: AI Learning Platform",
   "allProj1Desc": "Hyper-personalized e-learning platform with Agentic AI workflows, Tri-Storage backend (PostgreSQL + pgvector + Neo4j), and Zod-validated LLM outputs.",
   "allProj2Title": "TechFlix: Corporate ERP & CMS",
@@ -134,5 +120,13 @@
   "allProj9Title": "Student Management System",
   "allProj9Desc": "Scalable multi-tenant portal for coaching centers and Madrasahs with attendance tracking and result management.",
   "allProj10Title": "Precision Engine (Repair SaaS)",
-  "allProj10Desc": "Multi-tenant SaaS for repair shops with Hono, Drizzle ORM, BullMQ, and PostgreSQL on Bun runtime."
+  "allProj10Desc": "Multi-tenant SaaS for repair shops with Hono, Drizzle ORM, BullMQ, and PostgreSQL on Bun runtime.",
+  "projThesisTitle": "TinyML ToF LiDAR Calibration",
+  "projThesisDesc": "Co-authored a research paper proposing a signal-aware ML residual calibration method for ToF sensors. Built a custom pan-tilt rig with ESP32 and trained XGBoost models to mitigate multipath errors, deploying an optimized depth-12 decision tree for <100µs edge inference.",
+  "allProjThesisTitle": "TinyML LiDAR Calibration",
+  "allProjThesisDesc": "Co-authored a research paper proposing a signal-aware ML residual calibration method for single-point Time-of-Flight (ToF) sensors to correct multipath interference and illumination errors in indoor 3D reconstruction.",
+  "allProjITrustTitle": "iTrust E-Commerce Platform",
+  "allProjITrustDesc": "Scalable multi-language e-commerce solution utilizing Nuxt 3 and Pinia for performant state management, integrated with interactive data visualizations via ApexCharts.",
+  "allProjPosModernTitle": "pos-modern: High-Performance POS",
+  "allProjPosModernDesc": "Rapid Point-of-Sale (POS) frontend utilizing Vue 3, Vite, and Vue Query (TanStack) for optimized server-state synchronization and strict Zod form validation."
 }

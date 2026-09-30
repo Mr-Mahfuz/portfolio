@@ -62,6 +62,24 @@ onMounted(() => {
 
 const allProjects = computed(() => [
   {
+    title: t('allProjThesisTitle'),
+    description: t('allProjThesisDesc'),
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
+    tags: ['TinyML', 'XGBoost', 'C++'],
+  },
+  {
+    title: t('allProjITrustTitle'),
+    description: t('allProjITrustDesc'),
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
+    tags: ['Nuxt 3', 'Pinia', 'ApexCharts'],
+  },
+  {
+    title: t('allProjPosModernTitle'),
+    description: t('allProjPosModernDesc'),
+    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop',
+    tags: ['Vue 3', 'Vite', 'TanStack Query'],
+  },
+  {
     title: t('allProj1Title'),
     description: t('allProj1Desc'),
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',

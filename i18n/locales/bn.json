@@ -5,7 +5,6 @@
   "projects": "প্রজেক্টস",
   "contact": "যোগাযোগ",
   "current": "বর্তমান",
-
   "availableForWork": "নতুন সুযোগের জন্য প্রস্তুত",
   "heroGreeting": "হাই, আমি",
   "heroName": "মাহফুজ আহমদ",
@@ -15,11 +14,9 @@
   "downloadResume": "সিভি ডাউনলোড",
   "viewLive": "লাইভ দেখুন",
   "scroll": "স্ক্রল করুন",
-
   "expLabel": "কাজের অভিজ্ঞতা",
   "expTitle": "যেখানে",
   "expTitleAccent": "কাজ করেছি",
-
   "exp1Role": "জুনিয়র সফটওয়্যার ইঞ্জিনিয়ার",
   "exp1Company": "রিগ টেকনোলজিস",
   "exp1Period": "জানুয়ারি ২০২৬ — বর্তমান",
@@ -29,7 +26,6 @@
   "exp1Point3": "REB অকশন পোর্টাল এবং নরওয়ে ইভেন্ট অ্যাপসহ বিভিন্ন ক্লায়েন্ট অ্যাপ্লিকেশনে মোবাইল-ফার্স্ট, রেসপন্সিভ UI ডিজাইন।",
   "exp1Point4": "জটিল ফ্রন্টএন্ড বিজনেস লজিক, ইনভেন্টরি ওয়ার্কফ্লো এবং কড়া রোল-বেজড অ্যাক্সেস কন্ট্রোল (RBAC) বাস্তবায়ন।",
   "exp1Point5": "Java Spring Boot এবং Node.js দিয়ে তৈরি ব্যাকএন্ড API-এর সাথে ফ্রন্টএন্ড ইন্টিগ্রেশন।",
-
   "exp2Role": "সফটওয়্যার ইঞ্জিনিয়ার ইন্টার্ন",
   "exp2Company": "রিগ টেকনোলজিস",
   "exp2Period": "অক্টোবর ২০২৫ — ডিসেম্বর ২০২৫",
@@ -37,13 +33,11 @@
   "exp2Point1": "সিনিয়র ইঞ্জিনিয়ারদের সাথে অ্যাপ্লিকেশন ডিবাগ ও পারফরম্যান্স অপ্টিমাইজেশনে কাজ।",
   "exp2Point2": "টেকনিক্যাল ওয়ার্কফ্লো ডকুমেন্টেশন ও কোডবেস উন্নয়নে অবদান।",
   "exp2Point3": "এন্টারপ্রাইজ-গ্রেড Vue.js ও Supabase ডেভেলপমেন্টে হ্যান্ডস-অন অভিজ্ঞতা অর্জন।",
-
   "projLabel": "প্রজেক্ট",
   "projTitle": "বাছাইকৃত",
   "projTitleAccent": "কাজ",
   "projSubtitle": "AI-ভিত্তিক প্ল্যাটফর্ম থেকে এন্টারপ্রাইজ সিস্টেম এবং IoT সলিউশন পর্যন্ত প্রজেক্ট কালেকশন।",
   "exploreAll": "সব প্রজেক্ট দেখুন",
-
   "proj1Title": "HomeSchool: AI-ভিত্তিক শিক্ষা প্ল্যাটফর্ম",
   "proj1Desc": "Agentic AI ওয়ার্কফ্লো ব্যবহার করে ডাইনামিক কুইজ ও টার্গেটেড লার্নিং ম্যাটেরিয়াল তৈরির হাইপার-পার্সোনালাইজড ই-লার্নিং প্ল্যাটফর্ম। PostgreSQL, pgvector এবং Neo4j-এর সমন্বয়ে \"Tri-Storage\" ব্যাকএন্ড আর্কিটেকচার। Zod স্কিমা দিয়ে কড়া LLM আউটপুট ভ্যালিডেশন এবং n8n দিয়ে অটোমেটেড অনবোর্ডিং ওয়ার্কফ্লো।",
   "proj2Title": "TechFlix: কর্পোরেট ERP ও CMS পোর্টাল",
@@ -52,11 +46,9 @@
   "proj3Desc": "আন্তর্জাতিক ট্রেনিং ইনস্টিটিউটের জন্য সিকিউর ডেটা আইসোলেশনসহ মোবাইল-রেসপন্সিভ, মাল্টি-ট্যানান্ট ERP প্ল্যাটফর্ম। ১-ক্লিক বাল্ক ইস্যুসহ অটোমেটেড সার্টিফিকেট জেনারেশন, অ্যাটেনডেন্স ট্র্যাকিং এবং ১০-পয়েন্ট গ্রেডিং সিস্টেম।",
   "proj4Title": "SmartPark: IoT আরবান পার্কিং সলিউশন",
   "proj4Desc": "ESP8266 মাইক্রোকন্ট্রোলারের ফার্মওয়্যার কনফিগারেশন এবং Firebase-এর মাধ্যমে রিয়েল-টাইম সেন্সর ডেটা ট্রান্সমিশন। সিস্টেম আর্কিটেকচারের উপর কনফারেন্স পেপার প্রকাশিত।",
-
   "skillsLabel": "দক্ষতা",
   "skillsTitle": "প্রযুক্তি যা",
   "skillsTitleAccent": "ব্যবহার করি",
-
   "aboutLabel": "আমার সম্পর্কে",
   "aboutTitle": "আমার সম্পর্কে",
   "aboutTitleAccent": "কিছু কথা",
@@ -68,7 +60,6 @@
   "hobby3": "বক্সিং",
   "hobby4": "দৌড়",
   "hobby5": "সাঁতার",
-
   "eduLabel": "শিক্ষা",
   "eduTitle": "একাডেমিক",
   "eduTitleAccent": "পটভূমি",
@@ -84,7 +75,6 @@
   "eduCourse5": "অপারেটিং সিস্টেমস",
   "eduCourse6": "কম্পিউটার নেটওয়ার্কস",
   "eduCourse7": "থিওরি অব কম্পিউটেশন",
-
   "eduDegree2": "এইচএসসি — বিজ্ঞান",
   "eduInst2": "মদিনাতুল উলুম কামিল মাদ্রাসা",
   "eduPeriod2": "২০২২",
@@ -93,14 +83,12 @@
   "eduInst3": "মদিনাতুল উলুম কামিল মাদ্রাসা",
   "eduPeriod3": "২০২০",
   "eduResult3": "৫.০০ / ৫.০০",
-
   "contactLabel": "যোগাযোগ",
   "contactTitle": "চলুন কিছু দারুণ",
   "contactTitleAccent": "তৈরি করি একসাথে",
   "contactSubtitle": "মাথায় দারুণ কোনো আইডিয়া ঘুরছে? আধুনিক টেকনোলজি ও প্রফেশনাল ডিজাইনে সেটা বাস্তবে রূপ দিই।",
   "getInTouch": "যোগাযোগ করুন",
   "orEmailMe": "অথবা ইমেইল করুন",
-
   "footerTagline": "স্কেলেবল ওয়েব অ্যাপ্লিকেশন ও AI-ভিত্তিক প্ল্যাটফর্ম তৈরিকারী সফটওয়্যার ইঞ্জিনিয়ার।",
   "allRightsReserved": "সর্বস্বত্ব সংরক্ষিত।",
   "builtWith": "Nuxt 3 ও Vue.js দিয়ে তৈরি",
@@ -108,13 +96,11 @@
   "connect": "সংযুক্ত হন",
   "enterprise": "এন্টারপ্রাইজ সিস্টেম",
   "publication": "প্রকাশনা",
-
   "all": "সবগুলো",
   "projectsTitle": "সকল",
   "projectsTitleAccent": "প্রজেক্ট",
   "allProjectsSubtitle": "এন্টারপ্রাইজ প্ল্যাটফর্ম, IoT সলিউশন এবং AI-ভিত্তিক অ্যাপ্লিকেশনগুলোর কমপ্লিট লিস্ট।",
   "backToHome": "হোমে ফিরে যান",
-
   "allProj1Title": "HomeSchool: AI শিক্ষা প্ল্যাটফর্ম",
   "allProj1Desc": "Agentic AI ওয়ার্কফ্লো, Tri-Storage ব্যাকএন্ড (PostgreSQL + pgvector + Neo4j) এবং Zod-ভ্যালিডেটেড LLM আউটপুটসহ হাইপার-পার্সোনালাইজড ই-লার্নিং প্ল্যাটফর্ম।",
   "allProj2Title": "TechFlix: কর্পোরেট ERP ও CMS",
@@ -134,5 +120,13 @@
   "allProj9Title": "স্টুডেন্ট ম্যানেজমেন্ট সিস্টেম",
   "allProj9Desc": "কোচিং সেন্টার ও মাদ্রাসার জন্য অ্যাটেনডেন্স ট্র্যাকিং ও রেজাল্ট ম্যানেজমেন্টসহ মাল্টি-ট্যানান্ট পোর্টাল।",
   "allProj10Title": "Precision Engine (রিপেয়ার SaaS)",
-  "allProj10Desc": "Hono, Drizzle ORM, BullMQ এবং Bun রানটাইমে PostgreSQL দিয়ে তৈরি রিপেয়ার শপের জন্য মাল্টি-ট্যানান্ট SaaS প্ল্যাটফর্ম।"
+  "allProj10Desc": "Hono, Drizzle ORM, BullMQ এবং Bun রানটাইমে PostgreSQL দিয়ে তৈরি রিপেয়ার শপের জন্য মাল্টি-ট্যানান্ট SaaS প্ল্যাটফর্ম।",
+  "projThesisTitle": "TinyML ToF LiDAR Calibration",
+  "projThesisDesc": "Co-authored a research paper proposing a signal-aware ML residual calibration method for ToF sensors. Built a custom pan-tilt rig with ESP32 and trained XGBoost models to mitigate multipath errors, deploying an optimized depth-12 decision tree for <100µs edge inference.",
+  "allProjThesisTitle": "TinyML LiDAR Calibration",
+  "allProjThesisDesc": "Co-authored a research paper proposing a signal-aware ML residual calibration method for single-point Time-of-Flight (ToF) sensors to correct multipath interference and illumination errors in indoor 3D reconstruction.",
+  "allProjITrustTitle": "iTrust E-Commerce Platform",
+  "allProjITrustDesc": "Scalable multi-language e-commerce solution utilizing Nuxt 3 and Pinia for performant state management, integrated with interactive data visualizations via ApexCharts.",
+  "allProjPosModernTitle": "pos-modern: High-Performance POS",
+  "allProjPosModernDesc": "Rapid Point-of-Sale (POS) frontend utilizing Vue 3, Vite, and Vue Query (TanStack) for optimized server-state synchronization and strict Zod form validation."
 }
